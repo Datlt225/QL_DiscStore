@@ -73,21 +73,23 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
             this.btnLogin.Location = new System.Drawing.Point(161, 212);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(136, 70);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng Nhập";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(357, 212);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(125, 70);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmLogin
             // 
