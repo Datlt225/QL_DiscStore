@@ -11,11 +11,11 @@ namespace QL_DiscStore.Class
     class XL_Bang : DataTable
     {
         #region Fields
-        public static string cnnStr = "Data Source=DESKTOP-A60TDCO\\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True";
+        public static string cnnStr = @"Data Source=DESKTOP-A60TDCO\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True";
         private static SqlConnection _cnn;
         private SqlDataAdapter _da = new SqlDataAdapter();
         private string _query; // Cau truy van
-        private string _name; // Ten table
+        private string _name; // Ten table  
         #endregion
         #region Properties
         public string query

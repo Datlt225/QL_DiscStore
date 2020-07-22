@@ -19,31 +19,64 @@ namespace QL_DiscStore
             InitializeComponent();
         }
         frmMain fMain = null;
-        XL_NhanVien tblNhanVien;
-
+        SqlConnection con = new SqlConnection( @"Data Source=DESKTOP-A60TDCO\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True");
+        
         public frmLogin (frmMain pf)
         {
             fMain = pf;
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            tblNhanVien = new XL_NhanVien();
-            DataRow[] r = tblNhanVien.Select("UserName='" + txtUserName.Text + "'and PassWord='"
-               + txtPassWord.Text + "'");
-            if(r.Count() > 0)
-            {
-                fMain.Text = "Hello" + r[0]["TenNV"].ToString();
-                fMain.maNV = r[0]["MaNV"].ToString();
-                fMain.enableControl((int)r[0]["MaLTK"]);
-                this.Close();
-            }
+        public static string ID_User = "";
 
+        public void btnLogin_Click(object sender, EventArgs e)
+        {
+            ID_User = getID();
+            if (ID_User != "")
+            {
+                frmMain fMain = new frmMain();
+                fMain.Show();
+                this.Hide();
+            }
             else
             {
-                MessageBox.Show("Dang nhap khong dung");
+                MessageBox.Show("Sai tai khoan");
             }
+        
+        }
+
+        private string getID ()
+        {
+            string id = "";
+
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select * from NhanVien where UserName = '" + txtUserName.Text + "' AND PassWord = '" + txtPassWord.Text + "'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr  in dt.Rows)
+                    {
+                        id = dr["MaNV"].ToString();
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("sai mat khau");
+            }
+
+            finally
+            {
+                con.Close();
+            }
+
+            return id;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

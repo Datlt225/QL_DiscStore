@@ -69,25 +69,25 @@
             this.txtPassWord.Location = new System.Drawing.Point(246, 147);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(274, 22);
-            this.txtPassWord.TabIndex = 1;
+            this.txtPassWord.TabIndex = 2;
             // 
             // btnLogin
             // 
             this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
-            this.btnLogin.Location = new System.Drawing.Point(161, 212);
+            this.btnLogin.Location = new System.Drawing.Point(110, 208);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(136, 70);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Size = new System.Drawing.Size(160, 70);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
-            this.btnExit.Location = new System.Drawing.Point(357, 212);
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnExit.Location = new System.Drawing.Point(360, 208);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(125, 70);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.Size = new System.Drawing.Size(160, 70);
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Thoát";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -102,6 +102,8 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Đăng Nhập";
             this.ResumeLayout(false);
