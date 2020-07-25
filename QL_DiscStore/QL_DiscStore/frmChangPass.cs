@@ -18,12 +18,15 @@ namespace QL_DiscStore
         {
             InitializeComponent();
         }
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-HERE\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True");
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             TabPage p = (TabPage)this.Parent;
             TabControl tabMain = (TabControl)p.Parent;
             tabMain.TabPages.Remove(p);
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -31,8 +34,8 @@ namespace QL_DiscStore
             errorProvider1.SetError(txtNewPass, "");
             errorProvider1.SetError(txtReNewPass, "");
 
-            /*if (txtNewPass.Text.Length < 8 || !txtNewPass.Text.Any(char.IsDigit)
-                || !txtNewPass.Text.Any(char.IsLower) || !txtNewPass.Text.Any(char.IsUpper)) ;
+            /*if (txtNewPass.Text.Length < 8 || txtNewPass.Text.Any(char.IsDigit)
+                || txtNewPass.Text.Any(char.IsLower) || txtNewPass.Text.Any(char.IsUpper)) ;
             {
                 errorProvider1.SetError(txtNewPass, "Mật khẩu mới tới thiểu 8 ký tự, bao gồm số, " +
                     "in hoa, in thường.");
@@ -47,20 +50,26 @@ namespace QL_DiscStore
 
             frmMain f = (frmMain)this.MdiParent;
 
-            if (f == null)
-                MessageBox.Show("cc");
 
-            int count = XL_Bang.Thuc_hien_lenh("Update NhanVien set PassWord ='" + 
-                txtNewPass.Text + "'where MaNV ='" + f.maNV + "'");
-             if (count > 0)
-             {
-                MessageBox.Show("Cập nhật thành công!!");
-             }
+            
+            int count = XL_Bang.Thuc_hien_lenh("Update NhanVien set PassWord ='"
+                + txtNewPass.Text + "'where MaNV ='" + frmLogin.ID_User + "'");
 
-             else
+            if (count > 0)
             {
-                MessageBox.Show("Cập nhật không thành công!!");
+                MessageBox.Show("Cap nhat thanh cong!!");
             }
+            else
+            {
+                MessageBox.Show("Cap nhat that bai!!");
+            }
+        }
+
+
+
+        private void frmChangPass_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

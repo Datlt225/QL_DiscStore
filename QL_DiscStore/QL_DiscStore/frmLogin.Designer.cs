@@ -44,7 +44,7 @@
             this.label1.Location = new System.Drawing.Point(106, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Tài Khoản:";
             // 
             // label2
@@ -54,7 +54,7 @@
             this.label2.Location = new System.Drawing.Point(106, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Mật Khẩu:";
             // 
             // txtUserName
@@ -62,14 +62,14 @@
             this.txtUserName.Location = new System.Drawing.Point(246, 96);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(274, 22);
-            this.txtUserName.TabIndex = 1;
+            this.txtUserName.TabIndex = 0;
             // 
             // txtPassWord
             // 
             this.txtPassWord.Location = new System.Drawing.Point(246, 147);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(274, 22);
-            this.txtPassWord.TabIndex = 2;
+            this.txtPassWord.TabIndex = 1;
             // 
             // btnLogin
             // 
@@ -77,24 +77,27 @@
             this.btnLogin.Location = new System.Drawing.Point(110, 208);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(160, 70);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(360, 208);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(160, 70);
-            this.btnExit.TabIndex = 4;
+            this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(658, 374);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -106,6 +109,7 @@
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

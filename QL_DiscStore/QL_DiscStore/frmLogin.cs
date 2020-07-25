@@ -18,8 +18,9 @@ namespace QL_DiscStore
         {
             InitializeComponent();
         }
+
         frmMain fMain = null;
-        SqlConnection con = new SqlConnection( @"Data Source=DESKTOP-A60TDCO\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-HERE\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True");
         
         public frmLogin (frmMain pf)
         {
@@ -44,7 +45,7 @@ namespace QL_DiscStore
             }
         
         }
-
+        
         private string getID ()
         {
             string id = "";
@@ -62,7 +63,6 @@ namespace QL_DiscStore
                     foreach (DataRow dr  in dt.Rows)
                     {
                         id = dr["MaNV"].ToString();
-
                     }
                 }
             }
@@ -82,6 +82,12 @@ namespace QL_DiscStore
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtUserName.Text = "admin";
+            txtPassWord.Text = "123";
         }
     }
 }
