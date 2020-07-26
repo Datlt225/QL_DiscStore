@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaff));
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,12 +56,38 @@
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.qL_DiscStoreDataSet = new QL_DiscStore.QL_DiscStoreDataSet();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanVienTableAdapter = new QL_DiscStore.QL_DiscStoreDataSetTableAdapters.NhanVienTableAdapter();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayVaoLamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passWordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maLTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStaff
             // 
+            this.dgvStaff.AutoGenerateColumns = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maNVDataGridViewTextBoxColumn,
+            this.tenNVDataGridViewTextBoxColumn,
+            this.gioiTinhDataGridViewTextBoxColumn,
+            this.ngayVaoLamDataGridViewTextBoxColumn,
+            this.sDTDataGridViewTextBoxColumn,
+            this.gmailDataGridViewTextBoxColumn,
+            this.userNameDataGridViewTextBoxColumn,
+            this.passWordDataGridViewTextBoxColumn,
+            this.maLTKDataGridViewTextBoxColumn});
+            this.dgvStaff.DataSource = this.nhanVienBindingSource;
             this.dgvStaff.Location = new System.Drawing.Point(28, 31);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.RowTemplate.Height = 24;
@@ -280,6 +307,74 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // qL_DiscStoreDataSet
+            // 
+            this.qL_DiscStoreDataSet.DataSetName = "QL_DiscStoreDataSet";
+            this.qL_DiscStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.qL_DiscStoreDataSet;
+            // 
+            // nhanVienTableAdapter
+            // 
+            this.nhanVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            // 
+            // tenNVDataGridViewTextBoxColumn
+            // 
+            this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
+            // 
+            // gioiTinhDataGridViewTextBoxColumn
+            // 
+            this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
+            // 
+            // ngayVaoLamDataGridViewTextBoxColumn
+            // 
+            this.ngayVaoLamDataGridViewTextBoxColumn.DataPropertyName = "NgayVaoLam";
+            this.ngayVaoLamDataGridViewTextBoxColumn.HeaderText = "NgayVaoLam";
+            this.ngayVaoLamDataGridViewTextBoxColumn.Name = "ngayVaoLamDataGridViewTextBoxColumn";
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            // 
+            // gmailDataGridViewTextBoxColumn
+            // 
+            this.gmailDataGridViewTextBoxColumn.DataPropertyName = "Gmail";
+            this.gmailDataGridViewTextBoxColumn.HeaderText = "Gmail";
+            this.gmailDataGridViewTextBoxColumn.Name = "gmailDataGridViewTextBoxColumn";
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            // 
+            // passWordDataGridViewTextBoxColumn
+            // 
+            this.passWordDataGridViewTextBoxColumn.DataPropertyName = "PassWord";
+            this.passWordDataGridViewTextBoxColumn.HeaderText = "PassWord";
+            this.passWordDataGridViewTextBoxColumn.Name = "passWordDataGridViewTextBoxColumn";
+            // 
+            // maLTKDataGridViewTextBoxColumn
+            // 
+            this.maLTKDataGridViewTextBoxColumn.DataPropertyName = "MaLTK";
+            this.maLTKDataGridViewTextBoxColumn.HeaderText = "MaLTK";
+            this.maLTKDataGridViewTextBoxColumn.Name = "maLTKDataGridViewTextBoxColumn";
+            // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,6 +410,8 @@
             this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.frmStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +445,17 @@
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private QL_DiscStoreDataSet qL_DiscStoreDataSet;
+        private System.Windows.Forms.BindingSource nhanVienBindingSource;
+        private QL_DiscStoreDataSetTableAdapters.NhanVienTableAdapter nhanVienTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayVaoLamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passWordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLTKDataGridViewTextBoxColumn;
     }
 }

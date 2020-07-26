@@ -146,5 +146,65 @@ namespace QL_DiscStore
         {
             this.PhanQuyen();
         }
+
+        private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("DoiMatKhau");
+            if (index >= 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmpay f = new frmpay();
+                f.MdiParent = this;
+                TabPage p = new TabPage(f.Text);
+                p.Name = "DoiMatkhau";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                f.Show();
+            }
+        }
+
+        private void btnChamCong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("DoiMatKhau");
+            if (index >= 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmChamCong f = new frmChamCong();
+                f.MdiParent = this;
+                TabPage p = new TabPage(f.Text);
+                p.Name = "DoiMatkhau";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                f.Show();
+            }
+        }
+
+        private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("DoiMatKhau");
+            if (index >= 0)
+                tabControlMain.SelectedIndex = index;
+            else
+            {
+                frmQL_Kho f = new frmQL_Kho();
+                f.MdiParent = this;
+                TabPage p = new TabPage(f.Text);
+                p.Name = "DoiMatkhau";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                f.Show();
+            }
+        }
     }
 }

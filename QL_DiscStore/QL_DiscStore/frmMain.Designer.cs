@@ -84,6 +84,7 @@
             this.btnChamCong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChamCong.ImageOptions.Image")));
             this.btnChamCong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChamCong.ImageOptions.LargeImage")));
             this.btnChamCong.Name = "btnChamCong";
+            this.btnChamCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChamCong_ItemClick);
             // 
             // btnThanhToan
             // 
@@ -92,6 +93,7 @@
             this.btnThanhToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.Image")));
             this.btnThanhToan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.ImageOptions.LargeImage")));
             this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThanhToan_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -101,11 +103,12 @@
             // 
             // btnKho
             // 
-            this.btnKho.Caption = "Kho";
+            this.btnKho.Caption = "Quản Lý Kho";
             this.btnKho.Id = 5;
             this.btnKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKho.ImageOptions.Image")));
             this.btnKho.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKho.ImageOptions.LargeImage")));
             this.btnKho.Name = "btnKho";
+            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
             // 
             // btnDoiMatKhau
             // 

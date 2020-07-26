@@ -34,6 +34,8 @@ namespace QL_DiscStore
 
         private void frmStaff_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_DiscStoreDataSet.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.qL_DiscStoreDataSet.NhanVien);
             tblNhanVien = new XL_NhanVien();
             LoadDGVStaff();
 
