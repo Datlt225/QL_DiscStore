@@ -24,7 +24,7 @@ namespace QL_DiscStore
         private void frmChamCong_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qL_DiscStoreDataSet1.ChamCong' table. You can move, or remove it, as needed.
-            //this.chamCongTableAdapter.Fill(this.qL_DiscStoreDataSet1.ChamCong);
+            this.chamCongTableAdapter.Fill(this.qL_DiscStoreDataSet1.ChamCong);
             tblNhanVien = new XL_NhanVien();
             tblChamCong = new XL_ChamCong();
             loadCTChamCong();
@@ -40,7 +40,8 @@ namespace QL_DiscStore
             ds.Relations.Add(qh);
 
             DataColumn cTenVN = new DataColumn("TenNV", Type.GetType("System.String"), "Parent(FRK_NhanVien_ChamCong).TenNV");
-            tblChamCong.Columns.Add(cTenVN);
+            if (!tblChamCong.Columns.Contains("TenNV"))
+                tblChamCong.Columns.Add(cTenVN);
 
             dgvChamCong.AutoGenerateColumns = false;
             dgvChamCong.DataSource = tblChamCong;

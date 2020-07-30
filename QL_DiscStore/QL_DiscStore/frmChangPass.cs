@@ -18,7 +18,6 @@ namespace QL_DiscStore
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-HERE\SQLEXPRESS;Initial Catalog=QL_DiscStore;Integrated Security=True");
 
 
         private void btnCancel_Click(object sender, EventArgs e)

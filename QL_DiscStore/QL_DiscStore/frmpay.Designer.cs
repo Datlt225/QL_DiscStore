@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmpay));
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
-            // label1
+            // btnExit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(308, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "xin chào";
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnExit.Location = new System.Drawing.Point(246, 135);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(133, 71);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmpay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnExit);
             this.Name = "frmpay";
             this.Text = "frmpay";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
     }
 }

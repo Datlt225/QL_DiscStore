@@ -132,6 +132,9 @@
     <EmbeddedResource Include="frmpay.resx">
       <DependentUpon>frmpay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQL_Kho.resx">
+      <DependentUpon>frmQL_Kho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.cs</DependentUpon>
     </EmbeddedResource>
