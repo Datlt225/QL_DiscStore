@@ -186,7 +186,7 @@
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmMain";
-            this.Text = "Quản lý Của Hàng Bán Đĩa";
+            this.Text = "Của Hàng Bán Đĩa LTD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
