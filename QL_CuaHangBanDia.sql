@@ -1,0 +1,239 @@
+USE [master]
+GO
+/****** Object:  Database [QL_DiscStore]    Script Date: 8/2/2020 10:44:39 AM ******/
+CREATE DATABASE [QL_DiscStore]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'QL_DiscStore', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\QL_DiscStore.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'QL_DiscStore_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\QL_DiscStore_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [QL_DiscStore] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [QL_DiscStore].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [QL_DiscStore] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [QL_DiscStore] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [QL_DiscStore] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [QL_DiscStore] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [QL_DiscStore] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [QL_DiscStore] SET  MULTI_USER 
+GO
+ALTER DATABASE [QL_DiscStore] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [QL_DiscStore] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [QL_DiscStore] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [QL_DiscStore] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [QL_DiscStore] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [QL_DiscStore] SET QUERY_STORE = OFF
+GO
+USE [QL_DiscStore]
+GO
+/****** Object:  Table [dbo].[ChamCong]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChamCong](
+	[MaNV] [char](10) NOT NULL,
+	[TenNV] [nvarchar](30) NULL,
+	[SoNgayLam] [int] NULL,
+	[HeSoLuong] [float] NULL,
+ CONSTRAINT [PK_ChamCong] PRIMARY KEY CLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDon]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDon](
+	[MaHD] [char](10) NOT NULL,
+	[SDTKhachHang] [char](10) NULL,
+	[NgayLap] [datetime] NULL,
+	[MaNV] [char](10) NULL,
+	[Noidung] [nvarchar](50) NULL,
+ CONSTRAINT [PK_HoaDon] PRIMARY KEY CLUSTERED 
+(
+	[MaHD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HoaDonCT]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HoaDonCT](
+	[MaHDCT] [char](10) NOT NULL,
+	[MaHD] [char](10) NULL,
+	[MaSP] [char](10) NULL,
+	[SoLuong] [int] NULL,
+	[DonGia] [decimal](18, 0) NULL,
+	[ThanhTien] [decimal](18, 0) NULL,
+ CONSTRAINT [PK_HoaDonCT] PRIMARY KEY CLUSTERED 
+(
+	[MaHDCT] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhachHang](
+	[SDTKhachHang] [char](10) NOT NULL,
+	[TenKH] [nvarchar](30) NULL,
+	[GioiTinh] [nchar](10) NULL,
+	[DiaChi] [nvarchar](50) NULL,
+ CONSTRAINT [PK_KhachHang] PRIMARY KEY CLUSTERED 
+(
+	[SDTKhachHang] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien](
+	[MaNV] [char](10) NOT NULL,
+	[TenNV] [nvarchar](30) NOT NULL,
+	[GioiTinh] [text] NOT NULL,
+	[NgayVaoLam] [date] NOT NULL,
+	[SDT] [char](10) NOT NULL,
+	[Gmail] [varchar](30) NULL,
+	[UserName] [char](10) NOT NULL,
+	[PassWord] [char](10) NOT NULL,
+	[MaLTK] [int] NOT NULL,
+ CONSTRAINT [PK_NhanVien] PRIMARY KEY CLUSTERED 
+(
+	[MaNV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SanPham]    Script Date: 8/2/2020 10:44:39 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SanPham](
+	[MaSP] [char](10) NOT NULL,
+	[TenSP] [nvarchar](30) NULL,
+	[TheLoai] [nchar](10) NULL,
+	[SoLuong] [int] NULL,
+ CONSTRAINT [PK_SanPham] PRIMARY KEY CLUSTERED 
+(
+	[MaSP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[ChamCong] ([MaNV], [TenNV], [SoNgayLam], [HeSoLuong]) VALUES (N'A002      ', N'Lê Thành Đạt', 30, 300000)
+GO
+INSERT [dbo].[ChamCong] ([MaNV], [TenNV], [SoNgayLam], [HeSoLuong]) VALUES (N'B001      ', N'Trần Thanh Hà', 15, 250000)
+GO
+INSERT [dbo].[ChamCong] ([MaNV], [TenNV], [SoNgayLam], [HeSoLuong]) VALUES (N'C003      ', N'Nguyễn Hải', 15, 250000)
+GO
+INSERT [dbo].[NhanVien] ([MaNV], [TenNV], [GioiTinh], [NgayVaoLam], [SDT], [Gmail], [UserName], [PassWord], [MaLTK]) VALUES (N'A002      ', N'Lê Thành Đạt', N'Nam', CAST(N'2018-05-31' AS Date), N'0326488251', N'thanhdat@gmail.com', N'admin     ', N'123       ', 1)
+GO
+INSERT [dbo].[NhanVien] ([MaNV], [TenNV], [GioiTinh], [NgayVaoLam], [SDT], [Gmail], [UserName], [PassWord], [MaLTK]) VALUES (N'B001      ', N'Trần Thanh Hà', N'N?', CAST(N'2010-03-07' AS Date), N'0522732578', N'thanhha@gmail.com', N'haha      ', N'123       ', 2)
+GO
+INSERT [dbo].[NhanVien] ([MaNV], [TenNV], [GioiTinh], [NgayVaoLam], [SDT], [Gmail], [UserName], [PassWord], [MaLTK]) VALUES (N'C003      ', N'Nguyễn Hải', N'Nam', CAST(N'2018-03-05' AS Date), N'0782934782', N'haihai@gmail.com', N'haihai    ', N'123       ', 2)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'AM01      ', N'Album nhạc xuân 2017', N'Âm Nhạc   ', 6)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'AM02      ', N'Liên Khúc nhạc trẻ', N'Âm Nhạc   ', 7)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'HH01      ', N'7 viên ngọc rồng', N'Hoạt Hình ', 5)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'HH02      ', N'Thám tử lừng danh conan', N'Hoạt Hình ', 5)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'HH03      ', N'Naruto', N'Hoạt Hình ', 4)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'PH01      ', N'Phim ma Thái Lan', N'Phim      ', 3)
+GO
+INSERT [dbo].[SanPham] ([MaSP], [TenSP], [TheLoai], [SoLuong]) VALUES (N'PH02      ', N'Phim ma Trung Quốc', N'Phim      ', 4)
+GO
+ALTER TABLE [dbo].[ChamCong]  WITH CHECK ADD  CONSTRAINT [FK_ChamCong_NhanVien] FOREIGN KEY([MaNV])
+REFERENCES [dbo].[NhanVien] ([MaNV])
+GO
+ALTER TABLE [dbo].[ChamCong] CHECK CONSTRAINT [FK_ChamCong_NhanVien]
+GO
+ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_KhachHang] FOREIGN KEY([SDTKhachHang])
+REFERENCES [dbo].[KhachHang] ([SDTKhachHang])
+GO
+ALTER TABLE [dbo].[HoaDon] CHECK CONSTRAINT [FK_HoaDon_KhachHang]
+GO
+ALTER TABLE [dbo].[HoaDon]  WITH CHECK ADD  CONSTRAINT [FK_HoaDon_NhanVien] FOREIGN KEY([MaNV])
+REFERENCES [dbo].[NhanVien] ([MaNV])
+GO
+ALTER TABLE [dbo].[HoaDon] CHECK CONSTRAINT [FK_HoaDon_NhanVien]
+GO
+ALTER TABLE [dbo].[HoaDonCT]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonCT_HoaDon] FOREIGN KEY([MaHD])
+REFERENCES [dbo].[HoaDon] ([MaHD])
+GO
+ALTER TABLE [dbo].[HoaDonCT] CHECK CONSTRAINT [FK_HoaDonCT_HoaDon]
+GO
+ALTER TABLE [dbo].[HoaDonCT]  WITH CHECK ADD  CONSTRAINT [FK_HoaDonCT_SanPham] FOREIGN KEY([MaSP])
+REFERENCES [dbo].[SanPham] ([MaSP])
+GO
+ALTER TABLE [dbo].[HoaDonCT] CHECK CONSTRAINT [FK_HoaDonCT_SanPham]
+GO
+USE [master]
+GO
+ALTER DATABASE [QL_DiscStore] SET  READ_WRITE 
+GO

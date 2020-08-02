@@ -45,7 +45,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.Location = new System.Drawing.Point(536, 417);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(123, 80);
@@ -57,11 +57,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(403, 9);
+            this.label1.Location = new System.Drawing.Point(312, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 39);
+            this.label1.Size = new System.Drawing.Size(256, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nhập kho";
+            this.label1.Text = "Nhập Sản Phẩm";
             // 
             // label2
             // 
@@ -105,7 +105,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.Location = new System.Drawing.Point(271, 417);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 80);
@@ -172,6 +172,7 @@
             this.Controls.Add(this.btnExit);
             this.Name = "frmQL_Kho";
             this.Text = "frmQL_Kho";
+            this.Load += new System.EventHandler(this.frmQL_Kho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -63,6 +63,9 @@
     <Compile Include="Class\XL_Bang.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Class\XL_SanPham.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmChamCong.cs">
       <SubType>Form</SubType>
     </Compile>
