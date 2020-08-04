@@ -86,8 +86,8 @@ namespace QL_DiscStore
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtUserName.Text = "admin";
-            txtPassWord.Text = "123";
+            //txtUserName.Text = "admin";
+            //txtPassWord.Text = "123";
         }
     }
 }

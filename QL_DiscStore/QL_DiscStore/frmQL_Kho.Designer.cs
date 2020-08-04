@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQL_Kho));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSP = new System.Windows.Forms.DataGridView();
@@ -46,7 +47,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.qL_DiscStoreDataSet2 = new QL_DiscStore.QL_DiscStoreDataSet2();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sanPhamTableAdapter = new QL_DiscStore.QL_DiscStoreDataSet2TableAdapters.SanPhamTableAdapter();
+            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.theLoaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +70,14 @@
             // 
             // dgvSP
             // 
+            this.dgvSP.AutoGenerateColumns = false;
             this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maSPDataGridViewTextBoxColumn,
+            this.tenSPDataGridViewTextBoxColumn,
+            this.theLoaiDataGridViewTextBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn});
+            this.dgvSP.DataSource = this.sanPhamBindingSource;
             this.dgvSP.Location = new System.Drawing.Point(24, 320);
             this.dgvSP.Name = "dgvSP";
             this.dgvSP.RowTemplate.Height = 24;
@@ -75,15 +92,17 @@
             this.btnCancel.Size = new System.Drawing.Size(108, 65);
             this.btnCancel.TabIndex = 54;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
-            this.btnSave.Location = new System.Drawing.Point(999, 146);
+            this.btnSave.Location = new System.Drawing.Point(999, 217);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 65);
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -93,6 +112,7 @@
             this.btnDelete.Size = new System.Drawing.Size(108, 65);
             this.btnDelete.TabIndex = 52;
             this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -102,6 +122,7 @@
             this.btnEdit.Size = new System.Drawing.Size(108, 65);
             this.btnEdit.TabIndex = 51;
             this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -111,6 +132,7 @@
             this.btnAdd.Size = new System.Drawing.Size(108, 65);
             this.btnAdd.TabIndex = 50;
             this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtTenSP
             // 
@@ -147,7 +169,7 @@
             // btnExit
             // 
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
-            this.btnExit.Location = new System.Drawing.Point(999, 217);
+            this.btnExit.Location = new System.Drawing.Point(999, 146);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(108, 65);
             this.btnExit.TabIndex = 31;
@@ -196,6 +218,44 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "KHO SẢN PHẨM";
             // 
+            // qL_DiscStoreDataSet2
+            // 
+            this.qL_DiscStoreDataSet2.DataSetName = "QL_DiscStoreDataSet2";
+            this.qL_DiscStoreDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataMember = "SanPham";
+            this.sanPhamBindingSource.DataSource = this.qL_DiscStoreDataSet2;
+            // 
+            // sanPhamTableAdapter
+            // 
+            this.sanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            // 
+            // theLoaiDataGridViewTextBoxColumn
+            // 
+            this.theLoaiDataGridViewTextBoxColumn.DataPropertyName = "TheLoai";
+            this.theLoaiDataGridViewTextBoxColumn.HeaderText = "TheLoai";
+            this.theLoaiDataGridViewTextBoxColumn.Name = "theLoaiDataGridViewTextBoxColumn";
+            // 
+            // soLuongDataGridViewTextBoxColumn
+            // 
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            // 
             // frmQL_Kho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,9 +279,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSP);
             this.Name = "frmQL_Kho";
-            this.Text = "frmQL_Kho";
+            this.Text = "Quản Lý Kho";
             this.Load += new System.EventHandler(this.frmQL_Kho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +307,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label label6;
+        private QL_DiscStoreDataSet2 qL_DiscStoreDataSet2;
+        private System.Windows.Forms.BindingSource sanPhamBindingSource;
+        private QL_DiscStoreDataSet2TableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theLoaiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
     }
 }
