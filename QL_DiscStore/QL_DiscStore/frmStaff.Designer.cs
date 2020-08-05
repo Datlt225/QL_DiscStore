@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaff));
             this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_DiscStoreDataSet = new QL_DiscStore.QL_DiscStoreDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.qL_DiscStoreDataSet = new QL_DiscStore.QL_DiscStoreDataSet();
-            this.nhanVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nhanVienTableAdapter = new QL_DiscStore.QL_DiscStoreDataSetTableAdapters.NhanVienTableAdapter();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,8 +69,8 @@
             this.passWordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maLTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStaff
@@ -93,6 +93,16 @@
             this.dgvStaff.RowTemplate.Height = 24;
             this.dgvStaff.Size = new System.Drawing.Size(1161, 260);
             this.dgvStaff.TabIndex = 0;
+            // 
+            // nhanVienBindingSource
+            // 
+            this.nhanVienBindingSource.DataMember = "NhanVien";
+            this.nhanVienBindingSource.DataSource = this.qL_DiscStoreDataSet;
+            // 
+            // qL_DiscStoreDataSet
+            // 
+            this.qL_DiscStoreDataSet.DataSetName = "QL_DiscStoreDataSet";
+            this.qL_DiscStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -307,16 +317,6 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // qL_DiscStoreDataSet
-            // 
-            this.qL_DiscStoreDataSet.DataSetName = "QL_DiscStoreDataSet";
-            this.qL_DiscStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nhanVienBindingSource
-            // 
-            this.nhanVienBindingSource.DataMember = "NhanVien";
-            this.nhanVienBindingSource.DataSource = this.qL_DiscStoreDataSet;
-            // 
             // nhanVienTableAdapter
             // 
             this.nhanVienTableAdapter.ClearBeforeFill = true;
@@ -324,31 +324,31 @@
             // maNVDataGridViewTextBoxColumn
             // 
             this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "Mã nhân viên";
             this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
             // 
             // tenNVDataGridViewTextBoxColumn
             // 
             this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "TenNV";
-            this.tenNVDataGridViewTextBoxColumn.HeaderText = "TenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "Tên nhân viên";
             this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
             // 
             // gioiTinhDataGridViewTextBoxColumn
             // 
             this.gioiTinhDataGridViewTextBoxColumn.DataPropertyName = "GioiTinh";
-            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "GioiTinh";
+            this.gioiTinhDataGridViewTextBoxColumn.HeaderText = "Giới tính";
             this.gioiTinhDataGridViewTextBoxColumn.Name = "gioiTinhDataGridViewTextBoxColumn";
             // 
             // ngayVaoLamDataGridViewTextBoxColumn
             // 
             this.ngayVaoLamDataGridViewTextBoxColumn.DataPropertyName = "NgayVaoLam";
-            this.ngayVaoLamDataGridViewTextBoxColumn.HeaderText = "NgayVaoLam";
+            this.ngayVaoLamDataGridViewTextBoxColumn.HeaderText = "Ngày vào làm";
             this.ngayVaoLamDataGridViewTextBoxColumn.Name = "ngayVaoLamDataGridViewTextBoxColumn";
             // 
             // sDTDataGridViewTextBoxColumn
             // 
             this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "Số điện thoại";
             this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
             // 
             // gmailDataGridViewTextBoxColumn
@@ -410,8 +410,8 @@
             this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.frmStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nhanVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

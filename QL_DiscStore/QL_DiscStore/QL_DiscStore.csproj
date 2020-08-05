@@ -57,6 +57,9 @@
     <Compile Include="Class\XL_ChamCong.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Class\XL_HoaDon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Class\XL_NhanVien.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -124,6 +127,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_DiscStoreDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_DiscStoreDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_DiscStoreDataSet3.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmChamCong.resx">
       <DependentUpon>frmChamCong.cs</DependentUpon>
@@ -197,6 +205,17 @@
     </None>
     <None Include="QL_DiscStoreDataSet2.xss">
       <DependentUpon>QL_DiscStoreDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QL_DiscStoreDataSet3.xsc">
+      <DependentUpon>QL_DiscStoreDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QL_DiscStoreDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_DiscStoreDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_DiscStoreDataSet3.xss">
+      <DependentUpon>QL_DiscStoreDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQL_Kho));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvSP = new System.Windows.Forms.DataGridView();
+            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_DiscStoreDataSet2 = new QL_DiscStore.QL_DiscStoreDataSet2();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -47,16 +49,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.qL_DiscStoreDataSet2 = new QL_DiscStore.QL_DiscStoreDataSet2();
-            this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamTableAdapter = new QL_DiscStore.QL_DiscStoreDataSet2TableAdapters.SanPhamTableAdapter();
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.theLoaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +83,16 @@
             this.dgvSP.RowTemplate.Height = 24;
             this.dgvSP.Size = new System.Drawing.Size(1161, 260);
             this.dgvSP.TabIndex = 6;
+            // 
+            // sanPhamBindingSource
+            // 
+            this.sanPhamBindingSource.DataMember = "SanPham";
+            this.sanPhamBindingSource.DataSource = this.qL_DiscStoreDataSet2;
+            // 
+            // qL_DiscStoreDataSet2
+            // 
+            this.qL_DiscStoreDataSet2.DataSetName = "QL_DiscStoreDataSet2";
+            this.qL_DiscStoreDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCancel
             // 
@@ -218,16 +228,6 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "KHO SẢN PHẨM";
             // 
-            // qL_DiscStoreDataSet2
-            // 
-            this.qL_DiscStoreDataSet2.DataSetName = "QL_DiscStoreDataSet2";
-            this.qL_DiscStoreDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sanPhamBindingSource
-            // 
-            this.sanPhamBindingSource.DataMember = "SanPham";
-            this.sanPhamBindingSource.DataSource = this.qL_DiscStoreDataSet2;
-            // 
             // sanPhamTableAdapter
             // 
             this.sanPhamTableAdapter.ClearBeforeFill = true;
@@ -235,25 +235,25 @@
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã sản phẩm";
             this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
             // 
             // tenSPDataGridViewTextBoxColumn
             // 
             this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
             this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
             // 
             // theLoaiDataGridViewTextBoxColumn
             // 
             this.theLoaiDataGridViewTextBoxColumn.DataPropertyName = "TheLoai";
-            this.theLoaiDataGridViewTextBoxColumn.HeaderText = "TheLoai";
+            this.theLoaiDataGridViewTextBoxColumn.HeaderText = "Thể loại";
             this.theLoaiDataGridViewTextBoxColumn.Name = "theLoaiDataGridViewTextBoxColumn";
             // 
             // soLuongDataGridViewTextBoxColumn
             // 
             this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
             this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
             // 
             // frmQL_Kho
@@ -282,8 +282,8 @@
             this.Text = "Quản Lý Kho";
             this.Load += new System.EventHandler(this.frmQL_Kho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_DiscStoreDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
